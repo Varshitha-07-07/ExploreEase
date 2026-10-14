@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExploreEase | Discover Your Next Story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+<!-- SPLASH SCREEN -->
+<section id="splash" class="splash">
+  <div class="splash-content">
+    <div class="star">✧</div>
+    <p class="splash-tagline">FIND YOUR NEXT STORY</p>
+    <h1>Explore<span>Ease</span></h1>
+    <p>Discover places. Create memories.</p>
+    <div class="splash-line"></div>
+  </div>
+</section>
+  <!-- APPLICATION -->
+  <div id="app" class="hidden">
+    <header class="navbar">
+      <a href="#" class="logo" data-page="home">Explore<span>Ease</span></a>
+      <nav>
+        <button data-page="home" class="nav-btn active">Home</button>
+        <button data-page="places" class="nav-btn">Places</button>
+        <button data-page="planner" class="nav-btn">Trip Planner</button>
+        <button data-page="saved" class="nav-btn">Saved Trips</button>
+      </nav>
+    </header>
+<!-- HOME -->
+<main id="homePage" class="page">
+    <section class="search-hero">
+        <p class="eyebrow">EXPLORE YOUR NEXT DESTINATION</p>
+        <h2>Discover Famous Places</h2>
+        <p>Enter a city or town to explore famous places.</p>
+
+        <form id="searchForm" class="search-form">
+            <input type="text" id="city" placeholder="Enter city name" value="" required>
+            <button type="submit" class="search-button">⌕ Search</button>
+        </form>
+    </section>
+    <!-- Close main after all Home page content -->
+      <section class="content-section">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">FIND YOUR FAVOURITE</p>
+            <h2>Explore Categories</h2>
+          </div>
+        </div>
+
+        <div class="categories">
+          <button class="category restaurant" data-category="restaurant">
+            <span>🍽️</span><b>Restaurants</b><i>›</i>
+          </button>
+          <button class="category mall" data-category="shopping_mall">
+            <span>🛍️</span><b>Malls</b><i>›</i>
+          </button>
+          <button class="category shopping" data-category="shopping">
+            <span>🛒</span><b>Shopping</b><i>›</i>
+          </button>
+          <button class="category school" data-category="school">
+            <span>🏫</span><b>Schools</b><i>›</i>
+          </button>
+          <button class="category college" data-category="university">
+            <span>🎓</span><b>Colleges</b><i>›</i>
+          </button>
+          <button class="category adventure" data-category="adventure">
+            <span>⛰️</span><b>Adventure</b><i>›</i>
+          </button>
+          <button class="category cafe" data-category="cafe">
+            <span>☕</span><b>Cafes</b><i>›</i>
+          </button>
+          <button class="category theater" data-category="movie_theater">
+            <span>🎬</span><b>Theaters</b><i>›</i>
+          </button>
+          <button class="category hospital" data-category="hospital">
+            <span>🏥</span><b>Hospitals</b><i>›</i>
+          </button>
+        </div>
+      </section>
+
+      <section class="content-section trip-banner">
+        <div>
+          <p class="eyebrow">YOUR NEXT ADVENTURE</p>
+          <h2>Plan Your Trip Today</h2>
+          <p>Build your itinerary and estimate your budget.</p>
+        </div>
+        <button class="search-button" data-page="planner">✈ Start Planning</button>
+      </section>
+    </main>
+
+<!-- PLACES -->
+<main id="placesPage" class="page hidden">
+    <section class="places-hero">
+        <p class="eyebrow">EXPLORE LOCAL FAVOURITES</p>
+        <h2 id="placesHeading">Discover Places</h2>
+        <p>Explore famous places in your city or town.</p>
+
+        <form id="placesSearchForm" class="search-form">
+            <input
+                type="text"
+                id="placesCity"
+                placeholder="Enter city name"
+                value=""
+                required
+            >
+            <button type="submit" class="search-button">⌕ Search</button>
+        </form>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">
+            <h2 id="resultsTitle">Top Places</h2>
+            <span id="resultsCount" class="muted"></span>
+        </div>
+
+        <p id="status" class="status">Search for places to begin.</p>
+        <div id="placesGrid" class="places-grid"></div>
+    </section>
+</main>
+
+
+    <!-- TRIP PLANNER -->
+    <main id="plannerPage" class="page hidden">
+      <section class="page-heading">
+        <p class="eyebrow">YOUR JOURNEY, YOUR WAY</p>
+        <h2>Plan Your <span>Perfect Trip</span></h2>
+        <p>Build your itinerary and estimate the total cost.</p>
+      </section>
+
+      <form id="tripForm" class="planner-grid">
+        <section class="panel">
+          <h3>Trip details</h3>
+
+          <label>Trip name
+            <input id="tripName" value="My Weekend Trip" required>
+          </label>
+          <label>Destination
+            <input id="tripCity" value="Vijayawada" required>
+          </label>
+
+          <div class="two-columns">
+            <label>Start date
+              <input id="tripDate" type="date" required>
+            </label>
+            <label>Number of days
+              <input id="days" type="number" min="1" max="30" value="2" required>
+            </label>
+          </div>
+
+          <div class="two-columns">
+            <label>People
+              <input id="people" type="number" min="1" value="2" required>
+            </label>
+            <label>Budget per person (₹)
+             <input id="budget" type="number" min="0" max="7000" value="5000" required>
+            </label>
+          </div>
+
+          <label>Hotel or starting location
+            <input id="startLocation" placeholder="Enter hotel or starting point">
+          </label>
+
+          <label>Interests
+            <select id="interest">
+              <option value="all">All categories</option>
+              <option value="restaurant">Restaurants</option>
+              <option value="shopping_mall">Malls</option>
+              <option value="cafe">Cafes</option>
+              <option value="adventure">Adventure</option>
+              <option value="movie_theater">Theaters</option>
+            </select>
+          </label>
+
+          <button class="search-button full-width">Generate Itinerary</button>
+        </section>
+
+        <section class="panel">
+          <h3>Budget estimates</h3>
+          <label>Hotel per room per night (₹)
+            <input id="hotelCost" type="number" min="0" value="2000">
+          </label>
+          <label>Transport per person per day (₹)
+            <input id="transportCost" type="number" min="0" value="400">
+          </label>
+          <label>Meals per person per day (₹)
+            <input id="mealCost" type="number" min="0" value="600">
+          </label>
+          <label>Activities per person (₹)
+            <input id="ticketCost" type="number" min="0" value="500">
+          </label>
+          <label>Shopping per person (₹)
+            <input id="shoppingCost" type="number" min="0" value="500">
+          </label>
+          <p class="muted small">
+            Estimates are editable and are not live hotel or ticket prices.
+          </p>
+        </section>
+      </form>
+
+      <section id="itinerary" class="content-section hidden">
+        <div class="section-title">
+          <h2 id="itineraryTitle">Your itinerary</h2>
+          <button id="saveTrip" class="search-button">♡ Save Trip</button>
+        </div>
+        <div id="budgetSummary" class="budget-grid"></div>
+        <p id="budgetAdvice" class="advice"></p>
+        <div id="itineraryDays"></div>
+      </section>
+    </main>
+
+    <!-- SAVED TRIPS -->
+    <main id="savedPage" class="page hidden">
+      <section class="page-heading">
+        <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+        <h2>Saved <span>Trips</span></h2>
+        <p>Your itineraries saved in this browser.</p>
+      </section>
+      <div id="savedGrid" class="saved-grid"></div>
+      <p id="emptySaved" class="status">No trips saved yet.</p>
+    </main>
+
+    <footer>
+      <a href="#" class="logo" data-page="home">Explore<span>Ease</span></a>
+      <p>Find your next story.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
